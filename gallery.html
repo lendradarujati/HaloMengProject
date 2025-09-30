@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Foto Kucing - HaloMeng</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css">
+    </head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fas fa-paw logo-icon"></i>
+            <h1>HaloMeng</h1>
+        </div>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="gallery.html" class="active">Galeri Foto</a>
+            <a href="about.html">Tentang Saya</a>
+        </nav>
+    </header>
+
+    <main class="gallery-page">
+        <div class="container">
+            <h2>Kumpulan foto kucing-kucing random :)</h2>
+            <p class="intro-text">Disini foto lengkap mereka, semua foto diambil tanpa kekerasan atau paksaan ya guys.</p>
+            
+            <div class="photo-grid-full">
+                
+                <div class="photo-item-full">
+                    <a href="img/MengAlfamart.JPG" data-caption="Meng Alfamart | Rebahan santai di depan pintu Alfamart. Lokasi: Tangeran Selatan.">
+                        <img src="img/MengAlfamart.JPG" alt="Meng Alfamart">
+                    </a>
+                    <div class="caption-full">
+                        <h4>Meng Alfamart</h4>
+                        <p>Rebahan santai di depan pintu Alfamart. Lokasi: Tangeran Selatan.</p>
+                    </div>
+                </div>
+
+                <div class="photo-item-full">
+                    <a href="img/MengKecil.JPG" data-caption="Si Mungiel | Lagi ditinggal induknya makan wiskas. Lokasi: Tangeran Selatan.">
+                        <img src="img/MengKecil.JPG" alt="Foto Kucing Mungil">
+                    </a>
+                    <div class="caption-full">
+                        <h4>Si Mungiel</h4>
+                        <p>Lagi ditinggal induknya makan wiskas. Lokasi: Tangeran Selatan.</p>
+                    </div>
+                </div>
+                
+                <div class="photo-item-full">
+                    <a href="img/MengMintaAyam.JPG" data-caption="Judul Kucing Baru | Cerita singkat dan lokasi kucing yang baru.">
+   		        <img src="img/MengMintaAyam.JPG" alt="Deskripsi Foto Baru"> 
+                    </a>
+    		    <div class="caption-full">
+        		<h4>Dipalak preman</h4>
+        		<p>Lagi makan ayam tapi dipelototin mulu sama si kucing ini. Lokasi: Depok.</p>
+    		    </div>
+		</div>
+                
+                <div class="photo-item-full">
+                    <a href="img/MengTaichan.JPG" data-caption="Judul Kucing Baru 2 | Cerita singkat dan lokasi kucing yang baru.">
+   		        <img src="img/MengTaichan.JPG" alt="Deskripsi Foto Baru"> 
+                    </a>
+    		    <div class="caption-full">
+        		<h4>"Minta Taichannya bang"</h4>
+        		<p>Disamperin meng ini pas lagi taichan date hahaha. Lokasi: Tangerang.</p>
+    		    </div>
+		</div>
+
+                <div class="photo-item-full">
+                    <a href="img/MengResto.JPG" data-caption="Judul Kucing Baru 3 | Cerita singkat dan lokasi kucing yang baru.">
+   		        <img src="img/MengResto.JPG" alt="Deskripsi Foto Baru"> 
+                    </a>
+    		    <div class="caption-full">
+        		<h4>Lucu banget mukanya</h4>
+        		<p>Jujur lupa gimana dan dimana ketemu kucing satu ini.</p>
+    		    </div>
+		</div>
+
+		</div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 HaloMeng Project. All Rights Reserved. | All photoshoots by Lendra Darujati.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
+
+    <script>
+        // Kode ini memberi tahu Lightbox untuk bekerja pada semua tautan di dalam div.photo-grid-full
+        var gallery = new SimpleLightbox('.photo-grid-full a', {
+            // Opsi: Mengambil caption dari atribut data-caption
+            captionsData: 'caption', 
+            captionDelay: 100,
+            history: false 
+        });
+    </script>
+
+    </body>
+</html>

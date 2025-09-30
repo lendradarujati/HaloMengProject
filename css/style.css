@@ -1,0 +1,390 @@
+/* 1. VARIABEL WARNA & RESET DASAR */
+:root {
+    /* Palet Warna Alami & Hangat */
+    --color-primary: #8B5A2B;    /* Cokelat Tua (Tapak Kaki) */
+    --color-secondary: #F0A34D;  /* Oranye Lembut (Aksen Kucing) */
+    --color-text: #333333;       /* Abu-abu Gelap untuk Teks */
+    --color-background: #FFFAF0; /* Krem Pucat/Ivory */
+    --color-light: #FFFFFF;      /* Putih */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background); /* Latar Belakang Krem */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Pastikan main mengambil sisa ruang */
+.hero, .featured-gallery {
+    flex-grow: 1; 
+}
+
+
+/* 2. HEADER DAN NAVIGASI */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--color-light); /* Latar Putih Bersih */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.5em;
+    color: var(--color-primary);
+    margin-left: 10px;
+}
+
+.logo-icon {
+    font-size: 1.8em;
+    color: var(--color-secondary);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-text);
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--color-secondary);
+    border-bottom: 2px solid var(--color-secondary); /* Aksen Aktif */
+    padding-bottom: 3px;
+}
+
+
+/* 3. BAGIAN HERO (UTAMA) */
+.hero {
+    /* Ganti dengan gambar latar belakang Anda */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/hero-bg.jpg') center/cover no-repeat; 
+    color: var(--color-light);
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h2 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.button-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--color-secondary);
+    color: var(--color-light);
+    text-decoration: none;
+    border-radius: 25px; /* Lebih lembut dan membulat */
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button-primary:hover {
+    background-color: #d18f40; 
+    transform: translateY(-2px); /* Efek angkat ringan */
+}
+
+
+/* 4. GALERI FOTO UNGGULAN (GRID) */
+.featured-gallery {
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.featured-gallery h3 {
+    font-size: 2em;
+    color: var(--color-primary);
+    margin-bottom: 30px;
+    border-bottom: 3px solid var(--color-secondary);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.photo-grid {
+    display: grid;
+    /* Membuat 3 kolom, responsif di layar kecil */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.photo-item {
+    background-color: var(--color-light);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.photo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.caption {
+    padding: 15px;
+}
+
+.caption h4 {
+    color: var(--color-primary);
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+
+/* 5. FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Memastikan footer selalu di bawah */
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    font-size: 0.9em;
+}
+
+/* MEDIA QUERIES (Responsif) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+    nav {
+        margin-top: 15px;
+    }
+    nav a {
+        margin: 0 10px;
+        font-size: 0.9em;
+    }
+    .hero {
+        padding: 80px 5%;
+    }
+    .hero-content h2 {
+        font-size: 2.2em;
+    }
+    .photo-grid {
+        /* Memastikan grid tetap berfungsi, meskipun hanya satu kolom di layar sangat kecil */
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =================================== */
+/* 6. GAYA KHUSUS HALAMAN GALERI (gallery.html) */
+/* =================================== */
+
+.gallery-page {
+    padding: 50px 5%;
+}
+
+.gallery-page h2 {
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+.intro-text {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    color: #666;
+}
+
+.photo-grid-full {
+    display: grid;
+    /* Membuat grid 3 kolom yang responsif */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.photo-item-full {
+    background-color: var(--color-light);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.photo-item-full:hover {
+    transform: scale(1.02);
+}
+
+.photo-item-full img {
+    width: 100%;
+    /* Tinggi foto yang konsisten untuk tampilan grid */
+    height: 280px; 
+    object-fit: cover;
+    display: block;
+}
+
+.caption-full {
+    padding: 15px;
+    text-align: center;
+}
+
+.caption-full h4 {
+    color: var(--color-secondary);
+    margin-bottom: 5px;
+}
+
+.detail-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.detail-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =================================== */
+/* 7. GAYA KHUSUS HALAMAN TENTANG (about.html) */
+/* =================================== */
+
+.about-page {
+    padding: 60px 5%;
+}
+
+.about-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start; /* Agar gambar tidak ikut memanjang */
+    background-color: var(--color-light);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image-container {
+    flex: 0 0 300px; /* Lebar tetap untuk gambar profil */
+    text-align: center;
+}
+
+.profile-image {
+    width: 100%;
+    height: 300px; /* Tinggi dan lebar sama agar lingkaran sempurna */
+    object-fit: cover;
+    border-radius: 50%; /* Membuat gambar menjadi lingkaran */
+    border: 5px solid var(--color-secondary);
+    box-shadow: 0 0 0 8px var(--color-background); /* Bingkai luar tipis */
+}
+
+.text-container {
+    flex: 1;
+}
+
+.text-container h2 {
+    color: var(--color-primary);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-style: italic;
+    color: var(--color-secondary);
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.text-container h3 {
+    color: var(--color-text);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.filosofi-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.filosofi-list li {
+    margin-bottom: 8px;
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.filosofi-list li i {
+    color: var(--color-secondary);
+    margin-right: 10px;
+}
+
+.button-contact {
+    /* Menggunakan gaya tombol yang sudah ada */
+    margin-top: 15px;
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Ubah tata letak menjadi vertikal */
+        align-items: center;
+        padding: 20px;
+    }
+
+    .profile-image-container {
+        flex: auto;
+        margin-bottom: 20px;
+    }
+    
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .text-container {
+        text-align: center;
+    }
+    
+    .filosofi-list {
+        text-align: left;
+        margin: 15px auto;
+        padding-left: 20px;
+    }
+}
